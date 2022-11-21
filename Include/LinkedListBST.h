@@ -25,6 +25,7 @@ public:
     bool isEmpty();
     void add(int key, int value);
     bool remove(Node *root, int key);
-    bool exists(int targetkey);
+    bool remove(int subtree, int key);
+    bool search(int targetkey);
     void inorder();
 };

@@ -11,6 +11,7 @@ bool LinkedListBST::isEmpty()
     std::cout << "The LinkedList Stack is not empty\n";
     return false;
 };
+
 void LinkedListBST::add(int key, int value)
 {
     Node *newnode = new Node(key, value);
@@ -60,7 +61,7 @@ bool LinkedListBST::remove(Node *root, int key)
         if (root->leftchild == NULL and root->rightchild == NULL)
         {
             // std::cout << "The no child case is called and " << root->value << "is deleted";
-            root->value = NULL;
+            root = NULL;
             return true;
         }
         // node with only one child or no child
@@ -79,9 +80,19 @@ bool LinkedListBST::remove(Node *root, int key)
         std::cout << "error";
         return false;
     }
+
+    return false;
 };
 
-bool LinkedListBST::exists(int targetkey)
+bool LinkedListBST :: remove(int subtree, int key)
+{
+
+    return remove(root,key);
+
+}
+
+
+bool LinkedListBST::search(int targetkey)
 {
     Node *temp = root;
     while (temp != NULL)
@@ -140,3 +151,6 @@ void LinkedListBST::inorder()
                 current = current->rightchild;
             }
         };
+
+    }
+}
